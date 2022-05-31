@@ -1,0 +1,70 @@
+/* rooms & suits section */
+.subtext{
+    color: rgb(197, 157, 95); 
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: italic;
+    padding-top: 20px;
+}
+.heading-text{
+    color: black;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+hr{
+    width: 120px;
+    color: black;
+    border: 0.5px solid black;
+    background-color: black;
+}
+.rooms{
+    display: flex;
+    margin: 40px 20px 0px 70px;
+}
+.rooms-container{
+    margin: 20px 10px;
+    max-width: 320px;
+}
+.rooms-img{
+    object-fit: contain;
+    width: 100%;
+}
+.rooms-tittle{
+    color: black;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0px 0px 0px;
+}
+.rooms-desc{
+    color: #999;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    margin: 0px 10px;
+}
+.rooms-btn{
+    text-align: center;
+    color: rgb(197, 157, 95); 
+    text-decoration: underline;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+}
+.rooms-btn:hover{
+    color: black;
+    cursor: pointer;
+}
+
+/* Mobile responsive */
+@media only screen and (max-device-width: 480px){
+    .rooms{
+        display: flex;
+        flex-direction: column;
+        margin: 40px 20px 0px 20px;
+    }
+}
