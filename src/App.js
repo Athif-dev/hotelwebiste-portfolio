@@ -5,6 +5,7 @@ import Premium_room from './Components/Rooms-details/Premium_room';
 import Vintage_room from './Components/Rooms-details/Vintage_room';
 import Dormatory from './Components/Rooms-details/Dormatory';
 import About from './Components/About-us/About';
+import Success from './Components/Rooms-details/Payment/Success';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/Vintage_room' element={<Vintage_room />} />
           <Route path='/Dormatory' element={<Dormatory />} />
           <Route path='/About' element={<About />} />
+          <Route path='/success' element={<Success />} />
         </Routes>
       </Router>
     </div>

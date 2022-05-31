@@ -1,10 +1,49 @@
 import {React, useState} from 'react';
 import './css/check-availability.css';
 import Form from './Form';
+import axios from 'axios';
+
+const getAllRoomsUrl = 'https://aj-heritage-api.herokuapp.com/rooms/allrooms';
+
 
 function Check_availability() {
-    const [formPopup,setFormPopup] = useState(false)
+  const [roomType, setRoomType] = useState("");
+  const [count, setCount] = useState(null);
+  const [formPopup,setFormPopup] = useState(false);
 
+  
+  function roomCount() {
+        
+        if(roomType === 'Classic'){
+          axios.get(getAllRoomsUrl).then(response => setCount(response.data[0].count)); 
+          
+          if(count > 0){
+            alert("Rooms are available");
+          }else{
+            alert("No rooms available");
+          }
+        }
+
+
+        else if(roomType === 'Premium'){
+          axios.get(getAllRoomsUrl).then(response => setCount(response.data[1].count));
+          if(count > 0){
+            alert("Rooms are available");
+          }else{
+            alert("No rooms available");
+          } 
+        }
+
+
+        else if(roomType === 'Vintage'){
+         axios.get(getAllRoomsUrl).then(response => setCount(response.data[3].count)); 
+          if(count > 0){
+            alert("Rooms are available");
+          }else{
+            alert("No rooms available");
+          }
+        }
+      }
   return (
     <div className='booking-section'>
     <div className='input-feilds'>
@@ -19,7 +58,7 @@ function Check_availability() {
 
     <div className='input-feilds'>
       <label className='booking-text'> Room type</label>
-      <select className='booking-input'>
+      <select className='booking-input' onChange={(e)=>{setRoomType(e.target.value)}}>
       <option>select type</option>
       <option>Classic</option>
       <option>Vintage</option>
@@ -28,8 +67,9 @@ function Check_availability() {
       </select>
     </div>
 
-      <button  onClick={() => setFormPopup(true)} className='booking-btn'>Check Availability</button>
-      <Form trigger={formPopup} setTrigger={setFormPopup} />
+      {/* <button onClick={roomCount()} >AVAILABLE OR NOT</button> */}
+      <button  onClick={roomCount} className='booking-btn'>Check Availability</button>
+      {/* <Form trigger={formPopup} setTrigger={setFormPopup} /> */}
     </div>
   )
 }

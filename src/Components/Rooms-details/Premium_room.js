@@ -1,5 +1,5 @@
 import {React, useState} from 'react'
-import './Classic_room.css';
+import './css/Classic_room.css';
 import Navbar from '../Navbar/Navbar.js';
 import Footer from '../Footer/Footer.js';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import axios from 'axios';
 import Image from './classic-room.jpg';
 import SubImage from './subimg1.jpg';
 
-import {BrowserRouter as Router,Link,} from "react-router-dom";
+import {BrowserRouter as Router,Link, useNavigate} from "react-router-dom";
 
 
 
@@ -16,19 +16,78 @@ const bookingPostUrl = 'https://aj-heritage-api.herokuapp.com/bookings/newBookin
 
 function Classic_room() {
 
-  //setting states from input values
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [checkIn, setCheckIn] = useState("");
-  const [checkOut, setCheckOut] = useState("");
-  const [adults, setAdults] = useState("");
-  const [rooms, setRooms] = useState("");
-  const [children, setChildren] = useState("");
-  const [roomType, setRoomType] = useState("");
-  const [message, setMessage] = useState("");
+//setting states from input values
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [checkIn, setCheckIn] = useState("");
+const [checkOut, setCheckOut] = useState("");
+const [adults, setAdults] = useState("");
+const [rooms, setRooms] = useState("");
+const [children, setChildren] = useState("");
+const [roomType, setRoomType] = useState("");
+const [message, setMessage] = useState("");
+
+const [roomCount, setRoomCount] = useState("");
+
+const navigate = useNavigate();
 
 
-  function booking(){
+
+  function handleChange(e){
+      // razorpay integration
+      if (name === '',email === '', checkIn === '', checkOut === '',adults === '', rooms === '') {
+        alert('Please fill in your details')
+      }else{
+      var options = {
+        "key": "rzp_test_nqm4ti3cQRNgUP", 
+        "amount": "10"*100, 
+        "currency": "INR",
+        "name": "AJ Heritage Inn",
+        "description": "Book your room",
+        "image": "https://ibb.co/dtnhvZg",
+        "handler": function (response){
+          navigate('/success')
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature)
+      },
+        "prefill": {
+            "name": "Gaurav Kumar",
+            "email": "",
+            "contact": ""
+        },
+        "notes": {
+            "address": "Razorpay Corporate Office"
+        },
+        "theme": {
+            "color": 'rgb(197, 157, 95)'
+        },
+        
+      };
+  }
+    var pay = new window.Razorpay(options);
+    pay.on('payment.failed', function (response){
+      alert(response.error.code);
+      alert(response.error.description);
+      alert(response.error.source);
+      alert(response.error.step);
+      alert(response.error.reason);
+      alert(response.error.metadata.order_id);
+      alert(response.error.metadata.payment_id);
+  });
+    pay.open()
+    e.preventDefault();
+        // razorpay integration end
+
+
+    //Getting the Count from DB 
+    const allRoomsURL = "https://aj-heritage-api.herokuapp.com/rooms/allrooms";
+    axios.get(allRoomsURL).then(response => setRoomCount(response.data[0].count));
+    console.log(roomCount);
+
+    const updatedRoom = roomCount - rooms;
+
+
     try{
    let res =  axios.post(bookingPostUrl, {
       name: name,
@@ -42,14 +101,15 @@ function Classic_room() {
 
     }).then(()=>{
       try {
-        const response =  axios.patch('http://aj-heritage-api.herokuapp.com/rooms/6274d8684d7c5bcf82b2e631', { 
-          "roomType": "Classic",
-          "price": 2000,
-          "adultsLimit": 2,
-          "childrenLimit": 2,
-          "count": 8
+        if(updatedRoom > 0){
+        const response =  axios.patch('http://aj-heritage-api.herokuapp.com/rooms/6274d8994d7c5bcf82b2e633', { 
+          "count": updatedRoom
         });
         console.log('Returned data: ', response);
+      }else{
+        alert("Available rooms: "+ rooms);
+      }
+       
       } catch (e) {
         console.log(` Axios request failed: ${e}`);
       }
@@ -151,7 +211,7 @@ function Classic_room() {
       </p>
     </div>
 
-    <button className=' classic-booking-btn' onClick={booking} >Book Now</button>
+    <button className=' classic-booking-btn' onClick={handleChange} >Book Now</button>
 
 
     </div>

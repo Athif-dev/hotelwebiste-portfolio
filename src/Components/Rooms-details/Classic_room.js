@@ -1,14 +1,15 @@
 import {React, useState, useEffect} from 'react'
-import './Classic_room.css';
+import './css/Classic_room.css';
 import Navbar from '../Navbar/Navbar.js';
 import Footer from '../Footer/Footer.js';
+
 import axios from 'axios';
 
 
 import Image from './classic-room.jpg';
 import SubImage from './subimg1.jpg';
 
-import {BrowserRouter as Router,Link,} from "react-router-dom";
+import {BrowserRouter as Route,Link,useNavigate } from "react-router-dom";
 
 
 const bookingPostUrl = 'https://aj-heritage-api.herokuapp.com/bookings/newBookings';
@@ -31,10 +32,6 @@ function Classic_room() {
 
 
 
-    
-
-
-
   //setting states from input values
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -46,18 +43,29 @@ function Classic_room() {
   const [roomType, setRoomType] = useState("");
   const [message, setMessage] = useState("");
 
+  const [roomCount, setRoomCount] = useState("");
+
+  const navigate = useNavigate();
+
+
   function handleClick(e) {
-    if (name,email,checkIn,checkOut,adults,children === "") {
+    // razorpay integration
+    if (name === '',email === '', checkIn === '', checkOut === '',adults === '', rooms === '') {
       alert('Please fill in your details')
     }else{
     var options = {
-      "key": "rzp_test_nqm4ti3cQRNgUP", // Enter the Key ID generated from the Dashboard
-      "amount": "10"*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "key": "rzp_test_nqm4ti3cQRNgUP", 
+      "amount": "10"*100, 
       "currency": "INR",
       "name": "AJ Heritage Inn",
       "description": "Book your room",
       "image": "https://ibb.co/dtnhvZg",
-      "callback_url": "http://localhost:3000/",
+      "handler": function (response){
+        navigate('/success')
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature)
+    },
       "prefill": {
           "name": "Gaurav Kumar",
           "email": "",
@@ -68,51 +76,75 @@ function Classic_room() {
       },
       "theme": {
           "color": 'rgb(197, 157, 95)'
-      }
-  };
+      },
+      
+    };
 }
   var pay = new window.Razorpay(options);
+  pay.on('payment.failed', function (response){
+    alert(response.error.code);
+    alert(response.error.description);
+    alert(response.error.source);
+    alert(response.error.step);
+    alert(response.error.reason);
+    alert(response.error.metadata.order_id);
+    alert(response.error.metadata.payment_id);
+});
   pay.open()
-.then()
-  try{
-    let res =  axios.post(bookingPostUrl, {
-       name: name,
-       email: email,
-       checkIn: checkIn,
-       checkOut: checkOut,
-       adults: adults,
-       rooms: rooms,
-       children: children,
-       roomType: "Classic",
- 
-     }).then(()=>{
-       try {
-         const response =  axios.patch('http://aj-heritage-api.herokuapp.com/rooms/6274d8684d7c5bcf82b2e631', { 
-           "roomType": "Classic",
-           "price": 2000,
-           "adultsLimit": 2,
-           "childrenLimit": 1,
-           "count": 3
-         });
-         console.log('Returned data: ', response);
-       } catch (e) {
-         console.log(` Axios request failed: ${e}`);
-       }
-     })
- 
-     //let resJson = res.json();
- 
-     if(res.status === 200){
-       setMessage("Booking details saved");
-       setRoomType("Classic");
- 
- 
-     }else{
-       setMessage("Error has occurred");
-     }
-   }catch(err){
-     console.log(err);
-   }
+  e.preventDefault();
+      // razorpay integration end
+
+
+      //Getting the Count from DB 
+    const allRoomsURL = "https://aj-heritage-api.herokuapp.com/rooms/allrooms";
+    axios.get(allRoomsURL).then(response => setRoomCount(response.data[0].count));
+    console.log(roomCount);
+
+    const updatedRoom = roomCount - rooms;
+
+    //Posting the data to DB
+    try{
+   let res =  axios.post(bookingPostUrl, {
+      name: name,
+      email: email,
+      checkIn: checkIn,
+      checkOut: checkOut,
+      adults: adults,
+      rooms: rooms,
+      children: children,
+      roomType: "Classic",
+    //Updating the count feature
+    
+    }).then(()=>{
+      try {
+        //console.log(rooms);
+        if(updatedRoom > 0){
+        const response =  axios.patch('http://aj-heritage-api.herokuapp.com/rooms/6274d8684d7c5bcf82b2e631', { 
+          "count": updatedRoom
+        });
+        console.log('Returned data: ', response);
+      }else{
+        alert("Available rooms: " + rooms);
+      }
+        
+      } catch (e) {
+        console.log(` Axios request failed: ${e}`);
+      }
+    }).then(alert("Booking done successfully!"))
+
+    //let resJson = res.json();
+
+    if(res.status === 200){
+      setMessage("Booking details saved");
+      setRoomType("Classic");
+
+
+    }else{
+      setMessage("Error has occurred");
+    }
+  }catch(err){
+    console.log(err);
+  }
 
   }
 
