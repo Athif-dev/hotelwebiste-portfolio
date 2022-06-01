@@ -6,6 +6,8 @@ import Vintage_room from './Components/Rooms-details/Vintage_room';
 import Dormatory from './Components/Rooms-details/Dormatory';
 import About from './Components/About-us/About';
 import Success from './Components/Rooms-details/Payment/Success';
+import Failure from './Components/Rooms-details/Payment/Failure';
+
 
 
 
@@ -26,6 +28,7 @@ function App() {
           <Route path='/Dormatory' element={<Dormatory />} />
           <Route path='/About' element={<About />} />
           <Route path='/success' element={<Success />} />
+          <Route path='/failure' element={<Failure />} />
         </Routes>
       </Router>
     </div>

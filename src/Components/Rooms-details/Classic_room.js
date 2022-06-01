@@ -50,7 +50,7 @@ function Classic_room() {
 
   function handleClick(e) {
     // razorpay integration
-    if (name === '',email === '', checkIn === '', checkOut === '',adults === '', rooms === '') {
+    if (name === '',email === '', checkIn === '', checkOut === '',adults < 1, rooms < 1) {
       alert('Please fill in your details')
     }else{
     var options = {
@@ -82,13 +82,14 @@ function Classic_room() {
 }
   var pay = new window.Razorpay(options);
   pay.on('payment.failed', function (response){
-    alert(response.error.code);
-    alert(response.error.description);
-    alert(response.error.source);
-    alert(response.error.step);
-    alert(response.error.reason);
-    alert(response.error.metadata.order_id);
-    alert(response.error.metadata.payment_id);
+    navigate('/failure')
+    // alert(response.error.code);
+    // alert(response.error.description);
+    // alert(response.error.source);
+    // alert(response.error.step);
+    // alert(response.error.reason);
+    // alert(response.error.metadata.order_id);
+    // alert(response.error.metadata.payment_id);
 });
   pay.open()
   e.preventDefault();

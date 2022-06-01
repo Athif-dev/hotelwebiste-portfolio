@@ -76,9 +76,13 @@ function LandingPage() {
         </div>
 
         {/* map section */}
-        <div className='map'>
-          <Map />
+
+        <div className='map-section'>
+        <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.1205084529993!2d76.69863131462468!3d11.398792650514505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba897b2751fde43%3A0xec454862bb9d71d1!2sAJ%20Heritage%20Group%20of%20Hotels!5e0!3m2!1sen!2sin!4v1653992965233!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+
+         {/* contact section */}
+         <Contact />                      
 
         {/* gallery section */}
         <div className='gallery' id='gallery'>
@@ -103,9 +107,7 @@ function LandingPage() {
           </div>
         </div>
 
-         {/* gallery section */}
-         <Contact />                      
-
+        
          {/* footer */}
         <Footer />
     </>

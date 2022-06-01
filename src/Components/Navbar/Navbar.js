@@ -13,10 +13,10 @@ function Navbar() {
 
     <div className='links-container'>
     <li className='nav-link'> <Link  to="/" >HOME </Link></li>
-    <li className='nav-link'>  <a href='#rooms'> ROOMS</a></li>
-    <li className='nav-link'> <a href='#gallery'>GALLERY</a> </li>
-    <li className='nav-link'> <a href='#services'> SERVICES</a></li>
-    <li className='nav-link'> <a href='#contact'> CONTACT</a></li>
+    <li className='nav-link'>  <a href='/#rooms'> ROOMS</a></li>
+    <li className='nav-link'> <a href='/#gallery'>GALLERY</a> </li>
+    <li className='nav-link'> <a href='/#services'> SERVICES</a></li>
+    <li className='nav-link'> <a href='/#contact'> CONTACT</a></li>
     <li className='nav-link'> <Link onUpdate={() => window.scrollTo(0, 0)} to="/About" > ABOUT US </Link></li>
     </div>
     

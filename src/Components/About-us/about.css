@@ -99,6 +99,8 @@
     margin-right: 22px;
 }
 .star-sec-icon:hover{
+    cursor: cursor;
+    transition: all 0.3s;
     color: rgb(197, 157, 95);
 }
 .star-content-heading{
@@ -107,6 +109,8 @@
     font-size: 20px;
 }
 .star-content-heading:hover{
+    cursor:context-menu;
+    transition: all 0.3s;
     color: rgb(197, 157, 95);
 }
 .star-content-desc{

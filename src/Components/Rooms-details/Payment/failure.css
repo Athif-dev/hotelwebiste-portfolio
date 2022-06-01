@@ -1,64 +1,62 @@
-.success-page{
-    background-color: #F2F4F5;
+.failure-page{
+    background-color: #F1F1F1;
     height: 100vh;
 }
-.success-img{
+.failure-img{
     margin: 0px 0px 0px 440px;
     object-fit: contain;
     width: 650px;
 }
-.success-txt{
+.failure-txt{
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
     text-align: center;
     font-size: 40px;
-    color: #67B37A;
+    color: #EA4335;
     margin: -50px 0px 0px 0px;
 }
-.success-subtxt{
+.failure-subtxt{
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     text-align: center;
     font-size: 18px;
     color: grey;
 }
-.return-home-btn{
+.retry-btn{
     padding: 15px 50px;
-    background-color: #67B37A;
+    background-color: #EA4335;
     border: none;
     color: white;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
-    margin: 80px 0px 0px 665px;
+    margin: 80px 0px 0px 695px;
     font-size: 16px;
     cursor: pointer;
 }
 /* Mobile responsive */
 @media only screen and (max-device-width: 480px){
-    .success-img{
+    .failure-img{
         margin: 40px 0px 0px 0px;
         width: 375px;
     }
-    .success-txt{
+    .failure-txt{
         font-size: 20px;
         margin: -20px 0px 0px 0px;
     }
-    .success-subtxt{
+    .failure-subtxt{
         font-family: 'Nunito Sans', sans-serif;
         font-weight: 400;
         text-align: center;
         font-size: 12px;
         color: grey;
     }
-    .return-home-btn{
+    .retry-btn{
         padding: 12px 35px;
-        background-color: #67B37A;
         border: none;
         color: white;
         font-family: 'Nunito Sans', sans-serif;
         font-weight: 800;
-        margin: 80px 0px 0px 95px;
+        margin: 80px 0px 0px 130px;
         font-size: 14px;
-        cursor: pointer;
+        cursor: pointer}
     }
-}

@@ -1,7 +1,8 @@
 .heading-section{
-    height: 13vh;
+    height: 11vh;
     background-color: #eee;
     display: flex;
+    padding-top: 85px;   
 }
 .main-text{
     font-family: 'Nunito Sans', sans-serif;
@@ -53,7 +54,7 @@
 .classic-booking-form{
     margin-top: 60px;
     margin-left: 675px;
-    height: 120vh;
+    height: 60rem;
     width: 30%;
     background-color: #333132;
 }

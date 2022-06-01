@@ -43,6 +43,7 @@
     cursor: pointer;
 }
 .booking-btn:hover{
+    transition: all 0.2s;
     background-color: #333132;
     color:  rgb(197, 157, 95);
 }

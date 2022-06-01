@@ -93,7 +93,7 @@
     cursor: pointer;
 }
 .contact-btn:hover{
-    transition: ease 2s color;
+    transition: all 0.3s;
     background-color: #c59d5f;
 }
 
@@ -196,7 +196,6 @@
     margin: 0px 10px;
 }
 .contact-btn:hover{
-    transition: ease 2s color;
     background-color: #c59d5f;
 }
 }

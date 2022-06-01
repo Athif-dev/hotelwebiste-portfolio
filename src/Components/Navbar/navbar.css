@@ -36,9 +36,11 @@ a{
 
 }
 a:hover{
+    transition: all 0.2s;
     color: rgb(197, 157, 95); 
  }
 .nav-link:hover{
+    transition: all 0.3s;
    color: rgb(197, 157, 95); 
 }
 
