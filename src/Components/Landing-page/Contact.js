@@ -1,7 +1,11 @@
 import React from 'react';
 import './css/contact.css';
 
+
+
+
 function Contact() {
+
   return (
       <div className='contact-container' id='contact'>
     <div className='contact-content'>
@@ -21,7 +25,7 @@ function Contact() {
             <input className='contact-input' type='text' placeholder='Your Name' required></input>
             <input className='contact-input' type='text' placeholder='Your Email' required></input>
             <textarea className='contact-input-textarea' type='textarea' placeholder='Message' required></textarea>
-            <button className='contact-btn' type='submit'>SEND MESSAGE</button>
+            <button onClick={console.log('lo')} className='contact-btn' type='submit'>SEND MESSAGE</button>
         </div>
 
         </div>

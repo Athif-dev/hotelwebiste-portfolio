@@ -13,6 +13,8 @@ function Check_availability() {
 
   
   function roomCount() {
+
+        setFormPopup(true)
         
         if(roomType === 'Classic'){
           axios.get(getAllRoomsUrl).then(response => setCount(response.data[0].count)); 
@@ -69,7 +71,7 @@ function Check_availability() {
 
       {/* <button onClick={roomCount()} >AVAILABLE OR NOT</button> */}
       <button  onClick={roomCount} className='booking-btn'>Check Availability</button>
-      {/* <Form trigger={formPopup} setTrigger={setFormPopup} /> */}
+      <Form trigger={formPopup} setTrigger={setFormPopup} />
     </div>
   )
 }

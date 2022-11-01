@@ -12,11 +12,15 @@
 .form-inner{
     position: relative;
     width: 160px;
-    height: 650px;
+    height: 350px;
     width: 100%;
     max-width: 640px;
     background-color: #fff;
-    border-radius: 2px;
+    border-radius: 4px;
+
+    -webkit-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.12);
+    box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.12);
 }
 .close-btn{
 background: none;
@@ -29,56 +33,37 @@ color: rgb(197, 157, 95);
 .close-btn:hover{
     color: black;
 }
-.name-section{
-    display: flex;
-}
-.form-txt{
-    margin-left: 20px;
-    margin-top: 25px;
+.available-txt{
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    font-size: 30px;
 }
-.form-input-name{
-    height: 40px;
-    width: 80%;
-    margin: 20px 20px;
-    border-radius: 2px;
-    border: 1px solid black;
-}
-.form-input-name::placeholder{
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
-    padding-left: 5px;
-}
-.form-input{
-    height: 42px;
-    width: 100%;
-    margin: 20px 20px 20px 20px;
-    border-radius: 2px;
-    border: 1px solid black;
-}
-.form-input::placeholder{
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
-    padding-left: 5px;
-}
-.submit-btn{
+.popup-btn{
     border: none;
     width: 190px;
-    height: 48px;
+    height: 51px;
     background-color: rgb(197, 157, 95);
     color: white;
-    margin-left: 230px;
-    margin-top: 2px;
+    margin-left: 210px;
+    margin-top: 45px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
 }
-.submit-btn:hover{
+.popup-btn:hover{
+    transition: all 0.2s;
     background-color: #333132;
     color:  rgb(197, 157, 95);
+}
+.popup-txt-li{
+    color: white;
+}
+.popup-txt-li:hover{
+    transition: all 0.2s;
+    color:  rgb(197, 157, 95);
+
 }
 
 /* Mobile responsive */
@@ -95,57 +80,59 @@ color: rgb(197, 157, 95);
         align-items: center;
     }
     .form-inner{
-        height: 600px;
-        width: 85%;
+        position: relative;
+        width: 160px;
+        height: 250px;
+        width: 90%;
         max-width: 640px;
         background-color: #fff;
-        border-radius: 2px;
+        border-radius: 4px;
+    
+        -webkit-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.12);
+        -moz-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.12);
+        box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.12);
     }
     .close-btn{
-        background: none;
-        border: none;
-        size: 60px;
-        margin-left: 250px;
-        cursor: pointer;
-        color: rgb(197, 157, 95);
+    background: none;
+    border: none;
+    size: 60px;
+    margin-left: 290px;
+    cursor: pointer;
+    color: rgb(197, 157, 95);
     }
-    .form-txt{
-        margin-left: 15px;
-        margin-top: 25px;
+    .close-btn:hover{
+        color: black;
+    }
+    .available-txt{
         font-family: 'Nunito Sans', sans-serif;
-        font-weight: 700;
-        font-size: 13px;
+        font-weight: 800;
+        text-align: center;
+        font-size: 20px;
     }
-    .form-input-name{
-        height: 25px;
-        width: 80%;
-        margin: 20px 5px;
-        border-radius: 2px;
-        border: 1px solid lightgray;
-    }
-    .form-input-name::placeholder{
-        font-size: 10px;
-        padding-left: 5px;
-    }
-    .form-input{
-        height: 35px;
-        width: 100%;
-        margin: 20px 20px 20px 20px;
-        border-radius: 2px;
-        border: 1px solid lightgray;
-    }
-    .form-input::placeholder{
-        font-size: 10px;
-        padding-left: 5px;
-    }
-    .submit-btn{
+    .popup-btn{
         border: none;
-        width: 200px;
-        height: 38px;
+        width: 150px;
+        height: 36px;
         background-color: rgb(197, 157, 95);
         color: white;
-        margin-left: 50px;
-        margin-top: 15px;
+        margin-left: 100px;
+        margin-top: 45px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 700;
         font-size: 15px;
-    }   
+        cursor: pointer;
+    }
+    .popup-btn:hover{
+        transition: all 0.2s;
+        background-color: #333132;
+        color:  rgb(197, 157, 95);
+    }
+    .popup-txt-li{
+        color: white;
+    }
+    .popup-txt-li:hover{
+        transition: all 0.2s;
+        color:  rgb(197, 157, 95);
+    
+    }
 }
