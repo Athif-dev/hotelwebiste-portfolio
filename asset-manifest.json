@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/hotelwebiste-portfolio/static/css/main.bdb887a2.css",
+    "main.js": "/hotelwebiste-portfolio/static/js/main.cfd3502d.js",
+    "static/js/787.dee516e3.chunk.js": "/hotelwebiste-portfolio/static/js/787.dee516e3.chunk.js",
+    "static/media/landing.jpg": "/hotelwebiste-portfolio/static/media/landing.00709b8240ed2e693919.jpg",
+    "static/media/success.gif": "/hotelwebiste-portfolio/static/media/success.768c3bdeb50f4e15d0b8.gif",
+    "static/media/nature-section.jpg": "/hotelwebiste-portfolio/static/media/nature-section.0da219cf1384365aed52.jpg",
+    "static/media/g1.jpg": "/hotelwebiste-portfolio/static/media/g1.7a35b9fcca51394bae6f.jpg",
+    "static/media/g2.jpg": "/hotelwebiste-portfolio/static/media/g2.72d95af047e52aa9ae52.jpg",
+    "static/media/g3.jpg": "/hotelwebiste-portfolio/static/media/g3.2bfb74b174291b76c98e.jpg",
+    "static/media/room 2.jpg": "/hotelwebiste-portfolio/static/media/room 2.85cce247a5c9af0030bc.jpg",
+    "static/media/room 3.jpg": "/hotelwebiste-portfolio/static/media/room 3.8c6bf7cddbca6a05b2ed.jpg",
+    "static/media/room 1.jpg": "/hotelwebiste-portfolio/static/media/room 1.4ad63b8a7f4cb42308b3.jpg",
+    "static/media/landing-2.jpg": "/hotelwebiste-portfolio/static/media/landing-2.e0369e0164e4e03634ab.jpg",
+    "static/media/subimg1.jpg": "/hotelwebiste-portfolio/static/media/subimg1.dfa60e40ba25f429d29b.jpg",
+    "static/media/classic-room.jpg": "/hotelwebiste-portfolio/static/media/classic-room.8a9234d7d765062f36c2.jpg",
+    "static/media/img-1.jpg": "/hotelwebiste-portfolio/static/media/img-1.cefb30360ece13a29ae7.jpg",
+    "static/media/failure.gif": "/hotelwebiste-portfolio/static/media/failure.2b7fff3c3505efe5a6aa.gif",
+    "static/media/img-2.jpg": "/hotelwebiste-portfolio/static/media/img-2.6ad3372cd8ec2898d26a.jpg",
+    "static/media/logo.png": "/hotelwebiste-portfolio/static/media/logo.0b6d9c332f96197c71dd.png",
+    "index.html": "/hotelwebiste-portfolio/index.html",
+    "main.bdb887a2.css.map": "/hotelwebiste-portfolio/static/css/main.bdb887a2.css.map",
+    "main.cfd3502d.js.map": "/hotelwebiste-portfolio/static/js/main.cfd3502d.js.map",
+    "787.dee516e3.chunk.js.map": "/hotelwebiste-portfolio/static/js/787.dee516e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdb887a2.css",
+    "static/js/main.cfd3502d.js"
+  ]
+}
