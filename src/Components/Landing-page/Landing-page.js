@@ -5,7 +5,6 @@ import Check_availability from './Check_availability.js';
 import Rooms from './Rooms.js';
 import Footer from '../Footer/Footer.js';
 import Contact from './Contact';
-import Map from './Map';
 
 import gimg1 from './img/g1.jpg';
 import gimg2 from './img/g2.jpg';
