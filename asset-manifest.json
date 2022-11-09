@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hotelwebiste-portfolio/static/css/main.bdb887a2.css",
-    "main.js": "/hotelwebiste-portfolio/static/js/main.ec349dcc.js",
+    "main.js": "/hotelwebiste-portfolio/static/js/main.794e4a78.js",
     "static/js/787.dee516e3.chunk.js": "/hotelwebiste-portfolio/static/js/787.dee516e3.chunk.js",
     "static/media/landing.jpg": "/hotelwebiste-portfolio/static/media/landing.00709b8240ed2e693919.jpg",
     "static/media/success.gif": "/hotelwebiste-portfolio/static/media/success.768c3bdeb50f4e15d0b8.gif",
@@ -21,11 +21,11 @@
     "static/media/logo.png": "/hotelwebiste-portfolio/static/media/logo.0b6d9c332f96197c71dd.png",
     "index.html": "/hotelwebiste-portfolio/index.html",
     "main.bdb887a2.css.map": "/hotelwebiste-portfolio/static/css/main.bdb887a2.css.map",
-    "main.ec349dcc.js.map": "/hotelwebiste-portfolio/static/js/main.ec349dcc.js.map",
+    "main.794e4a78.js.map": "/hotelwebiste-portfolio/static/js/main.794e4a78.js.map",
     "787.dee516e3.chunk.js.map": "/hotelwebiste-portfolio/static/js/787.dee516e3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bdb887a2.css",
-    "static/js/main.ec349dcc.js"
+    "static/js/main.794e4a78.js"
   ]
 }
