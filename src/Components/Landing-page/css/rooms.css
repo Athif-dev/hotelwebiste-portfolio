@@ -46,7 +46,8 @@ hr{
     font-weight: 400;
     font-size: 15px;
     text-align: center;
-    margin: 0px 10px;
+    height: max-content;
+    margin: 0px 10px 0 10px;
 }
 .rooms-btn{
     border: none;
@@ -69,6 +70,25 @@ hr{
     border: 2px solid rgb(197, 157, 95);
     color: white;
 }
+
+/* .rooms-container-v{
+    margin: 20px 10px;
+    max-width: 320px;
+}
+.rooms-container-d{
+    margin: 20px 10px;
+    max-width: 320px;
+}
+.rooms-img-v{
+    margin-bottom: 18px;
+    object-fit: contain;
+    width: 100%;
+}
+.rooms-img-d{
+    margin-bottom: 25px;
+    object-fit: contain;
+    width: 100%;
+} */
 
 /* Mobile responsive */
 @media only screen and (max-device-width: 480px){
